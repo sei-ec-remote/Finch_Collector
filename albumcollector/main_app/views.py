@@ -27,3 +27,7 @@ def about(request):
 def albums_index(request):
     albums = Album.objects.all()
     return render(request, 'albums/index.html', {'albums':albums})
+
+def albums_show(request, album_id):
+    album = Album.objects.get(id=album_id)
+    return render(request, 'albums/show.html', {'album':album})

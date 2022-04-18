@@ -7,22 +7,16 @@
     <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
   </head>
   <body>
-    <h1>My Albums</h1>
-    <hr />
 
-    {% for album in albums %}
+
     <p>Artist: {{ album.artist }}</p>
-
-    <a href="/albums/{{album.id}}">
-        <p>Album: {{ album.albumName }}</p>
-    </a>
-    
+    <p>Album: {{ album.albumName }}</p>
     <p>Genre: {{ album.genre }}</p>
     <p>Year of Release: {{ album.yearOfRelease }}</p>
-
-    
     <hr />
-  {% endfor %}
+
+  <a href="/albums/">Back to index</a>
+
 
     <footer>All Rights Reserved, chrislee 2022</footer>
   </body>
