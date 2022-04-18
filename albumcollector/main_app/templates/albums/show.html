@@ -8,7 +8,7 @@
     <p>Genre: {{ album.genre }}</p>
     <p>Year of Release: {{ album.yearOfRelease }}</p>
     <hr />
-        <a href="{% url 'albums_update' album.id%}">Update: {{album}}</a>
+        <a href="{% url 'albums_update' album.id%}">Update: {{album}}</a></br>
         <a href="{% url 'albums_delete' album.id%}">Delete: {{album}}</a>
     <hr/>
 
