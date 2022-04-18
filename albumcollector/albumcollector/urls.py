@@ -21,3 +21,4 @@ urlpatterns = [
     #here is our main_app urls file
     path('', include('main_app.urls'))
 ]
+ 
