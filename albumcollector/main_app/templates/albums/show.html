@@ -1,0 +1,18 @@
+<!-- templates/cats/index.html -->
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+    <p>Artist: {{ album.artist }}</p>
+    <p>Album: {{ album.albumName }}</p>
+    <p>Genre: {{ album.genre }}</p>
+    <p>Year of Release: {{ album.yearOfRelease }}</p>
+    <hr />
+        <a href="{% url 'albums_update' album.id%}">Update: {{album}}</a></br>
+        <a href="{% url 'albums_delete' album.id%}">Delete: {{album}}</a>
+    <hr/>
+
+  <a href="/albums/">Back to index</a>
+
+
+{% endblock %}

@@ -1,0 +1,20 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Album Collector</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.css">
+  </head>
+  <body>
+        <h4>Chris, The Album Collector</h4>
+    <hr />
+
+        {% block content %}
+        {% endblock %}
+
+      <footer>
+        All Rights Reserved, Chris the Album Collector 2022
+      </footer>
+  </body>
+</html>
