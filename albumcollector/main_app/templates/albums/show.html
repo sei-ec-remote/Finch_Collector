@@ -1,13 +1,7 @@
 <!-- templates/cats/index.html -->
+{% extends 'base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Album Collector</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
-  </head>
-  <body>
-
+{% block content %}
 
     <p>Artist: {{ album.artist }}</p>
     <p>Album: {{ album.albumName }}</p>
@@ -18,6 +12,4 @@
   <a href="/albums/">Back to index</a>
 
 
-    <footer>All Rights Reserved, chrislee 2022</footer>
-  </body>
-</html>
+{% endblock %}
