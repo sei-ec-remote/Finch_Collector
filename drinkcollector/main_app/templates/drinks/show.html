@@ -1,0 +1,15 @@
+<!-- main_app/templates/cats/show.html -->
+{% extends 'base.html' %}
+{% load static %}
+
+{%block content%}
+    <h2> Name: {{ drink.name }}</h1>
+    <p> Ingredients: {{ drink.ingredients }}</p>
+    <p> Description: {{ drink.description }}</p>
+    <p> Method: {{ drink.method }}</p>
+    <hr />
+    <a href="{% url 'drinks_update' drink.id %}">Update {{drink.name}}</a>
+    <a href="{% url 'drinks_delete' drink.id %}">Delete {{drink.name}}</a>
+    <hr />
+    <a href="/drinks">Back to Drinks</a>
+{%endblock%}
