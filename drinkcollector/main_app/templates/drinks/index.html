@@ -1,0 +1,19 @@
+<!-- templates/cats/index.html -->
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+<h3>Drink List</h3>
+<hr />
+<a href="/drinks/create">Add a New Drink!</a>
+<hr />
+    {% for drink in drinks %}
+        <a href="/drink/{{drink.id}}">
+            <p>Name: {{ drink.name }}</p>
+        </a>
+        <p>Ingredients: {{ drink.ingredients }}</p>
+    <small>Description: {{drink.description}}</small>
+    <hr />
+    {% endfor %}
+{% endblock %}
