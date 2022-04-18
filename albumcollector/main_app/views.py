@@ -1,6 +1,7 @@
 from django.shortcuts import render
-from .models import Album
-# from django.http import HttpResponse
+from .models import Album 
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.http import HttpResponseRedirect
 
 # Create your views here.
 def index(request):
@@ -31,3 +32,22 @@ def albums_index(request):
 def albums_show(request, album_id):
     album = Album.objects.get(id=album_id)
     return render(request, 'albums/show.html', {'album':album})
+
+class AlbumCreate(CreateView):
+    model = Album
+    fields = '__all__'
+    success_url = '/albums'
+
+class AlbumUpdate(UpdateView):
+    model=Album
+    fields = ['artist', 'albumName', 'genre', 'yearOfRelease']
+
+    def form_valid(self, form):
+        self.object = form.save(commit=False)
+        self.object.save()
+        return HttpResponseRedirect('/albums/' + str(self.object.pk))
+
+class AlbumDelete(DeleteView):
+    model = Album
+    success_url = '/albums'
+
