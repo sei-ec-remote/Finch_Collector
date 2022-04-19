@@ -1,0 +1,18 @@
+<!-- main_app/templates/cats/show.html -->
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Doggos</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+  </head>
+  <body>
+    <h1>Doggo</h1>
+
+    <h2> Name: {{ dog.name }}</h1>
+    <p> Breed: {{ dog.breed }}</p>
+    <p> Description: {{ dog.description }}</p>
+    <p> Age: {{ dog.age }}</p>
+  </body>
+</html>

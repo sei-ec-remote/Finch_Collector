@@ -1,14 +1,25 @@
 <!-- templates/cats/index.html -->
+{% load static %}
 <!DOCTYPE html>
 <html>
   <head>
     <title>Doggos</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
   </head>
   <body>
     <h1>The Doggos</h1>
     {% for dog in dogs %}
-        <p>Name: {{ dog.name }}</p>
-        <p>Age: {{ dog.age }}</p>
+        <p>Name:
+            <a href="/dogs/{{dog.id}}">
+             {{ dog.name }}
+            </a>
+        </p>
+        {% if dog.age > 0 %}
+            <p>Age: {{ dog.age }}</p>
+        {% else %}
+            <p>Age: Kitten</p>
+        {% endif %}
         <hr />
     {% endfor %}
     <hr />
