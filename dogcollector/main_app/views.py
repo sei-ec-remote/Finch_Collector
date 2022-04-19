@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.contrib.auth.models import User
 from .models import Dog
 
 # Create your views here.
@@ -55,3 +56,11 @@ class DogUpdate(UpdateView):
 class DogDelete(DeleteView):
     model = Dog
     success_url = '/dogs'
+
+    # user profile view
+
+
+def profile(request, username):
+    user = User.objects.get(username=username)
+    dogs = Dog.objects.filter(user=user)
+    return render(request, 'profile.html', {'username': username, 'dogs': dogs})

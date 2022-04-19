@@ -4,13 +4,13 @@
 {% block content %}
 <div class="container">
 
-    <h2> Name: {{ dog.name }}</h1>
-    <p> Breed: {{ dog.breed }}</p>
-    <p> Description: {{ dog.description }}</p>
+    <h4> Name: {{ dog.name }}</h4>
+    <h5> Breed: {{ dog.breed }}</h5>
+    <h5> Description: {{ dog.description }}</h5>
     {% if dog.age > 0 %}
-    <p>Age: {{ dog.age }}</p>
+    <h5>Age: {{ dog.age }}</h5>
   {% else %}
-    <p>Age: puppy</p>
+    <h5>Age: puppy</h5>
   {% endif %}
 
     <a class="btn black" href="{% url 'dogs_update' dog.id %}">Update {{ dog.name }}</a>

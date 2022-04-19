@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<h4>{{ username }}'s collection:</h4>
+
+{% for dog in dogs %}
+<a href="/dogs/{{ dog.id }}">
+    <h5>{{ dog.name }}</h5>
+</a>
+
+{% endfor %}
+
+{% endblock %}
