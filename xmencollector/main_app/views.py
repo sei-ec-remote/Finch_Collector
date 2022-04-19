@@ -2,10 +2,11 @@
 # Declare the routes and client responses here.
 
 from django.shortcuts import render
+from .models import Issue
+
 # # We're now rendering a template instead of sending an HTTP response, so we no longer need this.
 # from django.http import HttpResponse
 
-# Create your views here.
 
 # # We're now rendering a template instead of sending an HTTP response, so we no longer need these.
 # def index(request):
@@ -19,22 +20,30 @@ def index(request):
 def about(request):
     return render(request, "about.html")
 
+# # Our info will now come from the database so this route must be rewritten.
+# def issues_index(request):
+#     return render(request, "issues/index.html", { "issues": issues })
+
 def issues_index(request):
+    issues = Issue.objects.all()
     return render(request, "issues/index.html", { "issues": issues })
 
-# Creating a class that will later serve as the model for entries.
-class Issue:
-    def __init__(self, number, year, cover, writer, artist):
-        self.number = number
-        self.year = year
-        self.cover = cover
-        self.writer = writer
-        self.artist = artist
 
-# Data to test functionality before database is created and connected.
-issues = [
-    Issue(135, 1980, "135.jpg", "Chris Claremont", "John Byrne"),
-    Issue(141, 1981, "141.jpg", "Chris Claremont", "John Byrne"),
-    Issue(173, 1983, "173.jpg", "Chris Claremont", "Paul Smith"),
-    Issue(175, 1983, "175.jpg", "Chris Claremont", "Paul Smith")
-]
+# # # Creating a class that will later serve as the model for entries.
+# # Now removing that class as we've shifted to the database.
+# class Issue:
+#     def __init__(self, number, year, cover, writer, artist):
+#         self.number = number
+#         self.year = year
+#         self.cover = cover
+#         self.writer = writer
+#         self.artist = artist
+#
+# # # Data to test functionality before database is created and connected.
+# # Removing the test data now that the database is up and running.
+# issues = [
+#     Issue(135, 1980, "135.jpg", "Chris Claremont", "John Byrne"),
+#     Issue(141, 1981, "141.jpg", "Chris Claremont", "John Byrne"),
+#     Issue(173, 1983, "173.jpg", "Chris Claremont", "Paul Smith"),
+#     Issue(175, 1983, "175.jpg", "Chris Claremont", "Paul Smith")
+# ]
