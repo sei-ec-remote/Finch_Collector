@@ -1,18 +1,21 @@
 <!-- main_app/templates/cats/show.html -->
+{% extends 'base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Dog Collector</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.css">
-    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
-  </head>
-  <body>
-    <h1>Dog Collector</h1>
+{% block content %}
+<div class="container">
 
     <h2> Name: {{ dog.name }}</h1>
     <p> Breed: {{ dog.breed }}</p>
     <p> Description: {{ dog.description }}</p>
-    <p> Age: {{ dog.age }}</p>
-  </body>
-</html>
+    {% if dog.age > 0 %}
+    <p>Age: {{ dog.age }}</p>
+  {% else %}
+    <p>Age: puppy</p>
+  {% endif %}
+
+    <a class="btn" href="{% url 'dogs_update' dog.id %}">Update {{ dog.name }}</a>
+    <a class="btn" href="{% url 'dogs_delete' dog.id %}">DELETE {{ dog.name }}</a>
+</div>
+<hr />
+<a href="/dogs/">Back to index</a>
+{% endblock %}
