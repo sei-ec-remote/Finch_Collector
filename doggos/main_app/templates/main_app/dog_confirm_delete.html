@@ -1,8 +1,16 @@
-<h1>Delete Dog</h1>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Doggos</title>
+  </head>
+  <body>
+    <h1>Delete Doggo</h1>
 
-  <p>Are you sure you want to delete this dog: {{ dog }}?</p>
+    <p>Are you sure you want to delete this dog: {{ dog }}?</p>
 
-  <form action="" method="POST">
-    {% csrf_token %}
-    <input type="submit" value="Yes, delete.">
-  </form>
+    <form action="" method="POST">
+        {% csrf_token %}
+        <input type="submit" value="Yes, delete.">
+    </form>
+</body>
+</html>

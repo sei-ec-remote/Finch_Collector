@@ -1,7 +1,16 @@
-<form action="" method="post">
-    {% csrf_token %}
-    <table>
-    {{ form.as_table }}
-    </table>
-    <input type="submit" value="Submit!">
-</form>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Doggos</title>
+  </head>
+  <body>
+    <h1>Doggos</h1>
+        <form action="" method="post">
+            {% csrf_token %}
+            <table>
+                {{ form.as_table }}
+            </table>
+            <input type="submit" value="Submit!">
+        </form>
+    </body>
+    </html>
