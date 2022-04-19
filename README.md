@@ -1,19 +1,11 @@
-# Finch collector deliverable - Views and Models (Bonus: explore Templates!)
-The lab for this lesson is repeating everything we just did, except you’ll CRUD something else like Finches and call the project something like finchcollector, or whatever. Refer to today's lesson notes [here](https://github.com/WDI-SEA/django-crud) for creating a new django project, remember to create it inside your environment folder and make sure your `pipenv shell` is running.
+# Jewelry Collector - django project
 
-- Fork and clone this repo
-- Pick a resource. (Dogs, Cards, Stamps, etc)
-- Initialize your project.
-- Create your db.
-- Configure your application to connect to the db.
-- Create view classes to manage all CRUD actions(Index, Post, Show, Delete, Update) like we did today
+This is a django project using python, django and sql to implement Index, Post,
+Show and Delete (all CRUD actions) on a model of Jewelry.   It uses postgresql to
+store the Jewelry model(data).
 
-## Bonus!
-- Create a template view that extends a base for all the routes.
-Because your completed Finch Collector app will be fairly comprehensive and be a nice addition to your portfolio, you should **create it outside of the class repo** so that you can make it a repo in your personal GitHub account.
-## References
-[Django-CRUD Lesson](https://github.com/WDI-SEA/django-crud)
+It was created inside an environment folder setup by pipenv install.
 
-### Bonus References
-[Django Static Files](https://docs.djangoproject.com/en/3.0/howto/static-files/)
-[Django Template Docs](https://docs.djangoproject.com/en/3.0/ref/templates/builtins/)
+The idea was to practice everything learned in class and to setup a django project
+ourselves while also practicing creating all the views classes necessary for our
+project.

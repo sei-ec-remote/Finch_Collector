@@ -1,0 +1,24 @@
+<!-- templates/jewels/index.html -->
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+    <h3>All the Jewelry Collector's Famous Jewels</h3>
+    <hr />
+    <div class="container">
+      {% for jewel in jewels %}
+      <div class="card blue lighten-2">
+      <a href="/jewels/{{jewel.id}}">
+          <p>Type: {{ jewel.type }}</p>
+      </a>
+      <p>Year: {{ jewel.year }}</p>
+      <p>Description: {{ jewel.description }}</p>
+      <p>Metal: {{ jewel.metal }}</p>
+      <p>Color: {{ jewel.color }}</p>
+      <hr />
+      </div>
+      {% endfor %}
+  </div>
+
+{% endblock %}
