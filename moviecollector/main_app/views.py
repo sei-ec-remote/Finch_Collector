@@ -9,6 +9,9 @@ def index(request):
 def about(request):
   return render(request, 'about.html')
 
+def movies_index(request):
+    return render(request, 'movies/index.html', {'movies': movies})
+
 
 class Movie:
     def __init__(self, name, genre, description):
