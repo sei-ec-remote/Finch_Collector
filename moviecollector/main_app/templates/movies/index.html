@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <h3>Movie List</h3>
+    <hr/>
+    <a href="/">Home</a>
+    <a href="/movies/create">Add a New Movie!</a>
+    <hr/>
+    {% for movie in movies %}
+        <p><a href="/movies/{{movie.id}}">Name: {{ movie.name }}</a></p>
+        <p>Genre: {{ movie.genre }}</p>
+        <p>Release year: {{ movie.year }}</p>
+        <p>Description: {{ movie.description }}</p>
+        <hr />
+    {% endfor %}
+{% endblock %}
