@@ -34,3 +34,24 @@ def dogs_index(request):
 def dogs_show(request, dog_id):
     dog = Dog.objects.get(id=dog_id)
     return render(request, 'dogs/show.html', {'dog': dog})
+
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.http import HttpResponseRedirect
+
+class DogCreate(CreateView):
+  model = Dog
+  fields = '__all__'
+  success_url = '/dogs'
+
+class DogUpdate(UpdateView):
+  model = Dog
+  fields = ['name', 'breed', 'description', 'age']
+
+  def form_valid(self, form):
+    self.object = form.save(commit=False)
+    self.object.save()
+    return HttpResponseRedirect('/dogs/' + str(self.object.pk))
+
+class DogDelete(DeleteView):
+  model = Dog
+  success_url = '/dogs'
