@@ -1,0 +1,23 @@
+<!-- main_app/templates/cats/show.html -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Doggos</title>
+  </head>
+  <body>
+    <h1>Doggo</h1>
+
+    <h2> Name: {{ dog.name }}</h1>
+    <h1> υ´• ﻌ •`υ</h1>
+    <p> Breed: {{ dog.breed }}</p>
+    <p> Description: {{ dog.description }}</p>
+    <p> Age: {{ dog.age }}</p>
+    <b><a href="{% url 'dogs_update' dog.id %}">Update</a></b> | 
+    <b><a href="{% url 'dogs_delete' dog.id %}">Delete</a></b>
+    <br/>
+    <br/>
+    <br/>
+    <a href="/dogs/">Back to Index</a>
+  </body>
+</html>
