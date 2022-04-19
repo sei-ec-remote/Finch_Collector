@@ -7,19 +7,24 @@
 
 <h3>Dog List</h3>
 <hr />
-<a href="/dogs/create">Add a New Dog!</a>
+<div class="card-panel">
+<a class="black-text text-darken-2" href="/dogs/create">Add a New Dog!</a>
+</div>
 <hr />
- 
+ <div class="container">
     {% for dog in dogs %}
+    <div class="card-panel grey lighten-2"> 
   <a href="/dogs/{{dog.id}}">
     <p>Name: {{ dog.name }}</p>
+</a>
   {% if dog.age > 0 %}
     <p>Age: {{ dog.age }}</p>
   {% else %}
     <p>Age: puppy</p>
   {% endif %}
-  </a>
+  <small>Description: {{ dog.description }}</small>
+</div>
     <hr />
-
-{% endfor %}
+    {% endfor %}
+</div>
 {% endblock %}

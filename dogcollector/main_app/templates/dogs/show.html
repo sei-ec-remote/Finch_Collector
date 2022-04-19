@@ -13,9 +13,11 @@
     <p>Age: puppy</p>
   {% endif %}
 
-    <a class="btn" href="{% url 'dogs_update' dog.id %}">Update {{ dog.name }}</a>
-    <a class="btn" href="{% url 'dogs_delete' dog.id %}">DELETE {{ dog.name }}</a>
+    <a class="btn black" href="{% url 'dogs_update' dog.id %}">Update {{ dog.name }}</a>
+    <a class="btn red" href="{% url 'dogs_delete' dog.id %}">DELETE {{ dog.name }}</a>
 </div>
 <hr />
-<a href="/dogs/">Back to index</a>
+<div class="card-panel">
+<a class="black-text text-darken-2" href="/dogs/">Back to index</a>
+</div>
 {% endblock %}
