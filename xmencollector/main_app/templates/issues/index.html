@@ -1,0 +1,24 @@
+<!-- templates/issues/index.html -->
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>All Mutants All The Time</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+    </head>
+    <body>
+        <h1>The All-New, All-Different, Here We Go Again</h1>
+        <hr />
+
+        {% for issue in issues %}
+            <img src="{% get_static_prefix %}{{ issue.cover }}" width="150px" />
+            <p>Issue #{{ issue.number }}</p>
+            <p>Year: {{ issue.year }}</p>
+            <p>Writer: {{ issue.writer }}</p>
+            <p>Artist: {{ issue.artist }}</p>
+            <hr />
+        {% endfor %}
+
+        <footer>Footer stuff</footer>
+    </body>
+</html>
