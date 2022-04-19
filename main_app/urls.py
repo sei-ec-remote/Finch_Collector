@@ -1,6 +1,8 @@
 from django.urls import path
 from . import views
 
+# These are all the routes for the Jewelry Site and the names of the 
+# functions which django will call in views.py
 urlpatterns = [
     path('', views.index, name='index'),
     path('about/', views.about, name='about'),

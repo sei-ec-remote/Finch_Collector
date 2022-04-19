@@ -1,7 +1,11 @@
 h1 {
-    color: turquoise;
+    color: pink;
 }
 
 body {
-    background-color: antiquewhite;
+    background-color: blue;
+}
+
+a, h3 {
+    color: magenta
 }

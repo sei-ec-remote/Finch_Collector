@@ -2,15 +2,19 @@
 {% load static %}
 
 {% block content %}
-    <h2> Type: {{ jewel.type }}</h2>
-    <p> Metal: {{ jewel.metal }}</p>
-    <p> Description: {{ jewel.description }}</p>
-    <p> Color: {{ jewel.color }}</p>
-    <p> Year: {{ jewel.year }}</p>
-    <hr/>
+    <div class="container">
+        <div class="card blue lighten-4">
+            <h3> Type: {{ jewel.type }}</h3>
+            <p> Metal: {{ jewel.metal }}</p>
+            <p> Description: {{ jewel.description }}</p>
+            <p> Color: {{ jewel.color }}</p>
+            <p> Year: {{ jewel.year }}</p>
+            <hr/>
 
-    <a href="{% url 'jewels_update' jewel.id %}">Update {{ jewel.type }}</a> | 
-    <a href="{% url 'jewels_delete' jewel.id %}">DELETE {{ jewel.type}}</a>
+            <a href="{% url 'jewels_update' jewel.id %}">Update {{ jewel.type }}</a> | 
+            <a href="{% url 'jewels_delete' jewel.id %}">DELETE {{ jewel.type}}</a>
+        </div>
+    </div>
     <hr/>
     <a href="/jewels/">Back to index</a>
 

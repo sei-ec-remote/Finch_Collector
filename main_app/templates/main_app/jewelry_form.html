@@ -2,11 +2,16 @@
 
 {% block content %}
 
-<form action="" method="POST">
-    {% csrf_token %}
-    <table>
-        {{form.as_table }}
-    </table>
-    <input type="submit" value="Submit">
-</form>
+<div class="container">
+    <div class="card blue lighten-4">
+    <form action="" method="POST">
+        {% csrf_token %}
+        <table>
+            {{form.as_table }}
+        </table>
+        <input type="submit" value="Submit">
+    </form>
+    </div>
+</div>
+
 {% endblock %}
