@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Dog Collector</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+</head>
+
+<body>
+    <a href="/dogs">
+        <h1>Dog Collector</h1>
+    </a>
+    <hr />
+
+    {% block content %}
+    {% endblock %}
+
+    <footer class="page-footer grey">
+        <div class="container">
+            All Rights Reserved, dogcollector 2022
+        </div>
+    </footer>
+</body>
+
+</html>

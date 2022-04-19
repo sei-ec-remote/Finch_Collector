@@ -1,0 +1,23 @@
+<!-- main_app/templates/cats/show.html -->
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="container">
+
+    <h4> Name: {{ dog.name }}</h4>
+    <h5> Breed: {{ dog.breed }}</h5>
+    <h5> Description: {{ dog.description }}</h5>
+    {% if dog.age > 0 %}
+    <h5>Age: {{ dog.age }}</h5>
+  {% else %}
+    <h5>Age: puppy</h5>
+  {% endif %}
+
+    <a class="btn black" href="{% url 'dogs_update' dog.id %}">Update {{ dog.name }}</a>
+    <a class="btn red" href="{% url 'dogs_delete' dog.id %}">DELETE {{ dog.name }}</a>
+</div>
+<hr />
+<div class="card-panel">
+<a class="black-text text-darken-2" href="/dogs/">Back to index</a>
+</div>
+{% endblock %}
