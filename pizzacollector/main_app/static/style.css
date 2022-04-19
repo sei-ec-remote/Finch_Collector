@@ -1,0 +1,18 @@
+body {
+    background-color: rgb(246, 148, 148);
+}
+
+h1 {
+    color: rgb(94, 33, 2);
+}
+
+hr {
+    background-color: white;
+    border: white 2px solid;
+}
+
+p,li {
+    font-size: 19px;
+    font-weight: bold;
+    color: rgb(56, 13, 13);
+}

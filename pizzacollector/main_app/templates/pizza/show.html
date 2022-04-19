@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<h2> Name: {{ pizza.name }}</h1>
+<p> Type: {{ pizza.type }}</p>
+<p> Toppings: {{ pizza.toppings }}</p>
+<a href="/pizza">Back to Index Page</a>
+<a href="{% url 'pizza_update' pizza.id %}">Update Details</a> | 
+<a href="{% url 'pizza_delete' pizza.id %}">DELETE This Pizza</a>
+{% endblock %}
