@@ -9,6 +9,7 @@
     <h1>the Pizza Collector's Pizzas</h1>
     <hr />
     {% for pizza in pizzas %}
+    <a href="/pizza/{{pizza.id}}">
     <p>Name: {{ pizza.name }}</p>
     <p>Type: {{ pizza.type }}</p>
     <p>Toppings: {{pizza.toppings}}</p>
