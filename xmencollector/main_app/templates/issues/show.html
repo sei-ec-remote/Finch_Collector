@@ -1,4 +1,4 @@
-<!-- templates/issues/index.html -->
+<!-- main_app/templates/issues/show.html -->
 {% load static %}
 <!DOCTYPE html>
 <html>
@@ -9,16 +9,12 @@
     </head>
     <body>
         <h2>The All-New, All-Different, Here We Go Again</h2>
-        <hr />
-
-        {% for issue in issues %}
-            <img src="{% get_static_prefix %}{{ issue.cover }}" width="150px" />
-            <a href="/issues/{{issue.id}}">
-                <p><strong>Issue #{{ issue.number }}</strong></p>
-            </a>
-            <p>Year: {{ issue.year }}</p>
-            <hr />
-        {% endfor %}
+        <hr>
+        <h3>Issue #{{ issue.number }}</h3>
+            <img src="{% get_static_prefix %}{{ issue.cover }}" width="300px" />
+        <p>Year: {{ issue.year }}</p>
+        <p>Writer: {{ issue.writer }}</p>
+        <p>Artist: {{ issue.artist }}</p>
 
         <footer>Footer stuff</footer>
     </body>

@@ -24,9 +24,15 @@ def about(request):
 # def issues_index(request):
 #     return render(request, "issues/index.html", { "issues": issues })
 
+# INDEX view for all comic issues
 def issues_index(request):
     issues = Issue.objects.all()
     return render(request, "issues/index.html", { "issues": issues })
+
+# SHOW view for individual issues
+def issues_show(request, issue_id):
+    issue = Issue.objects.get(id=issue_id)
+    return render(request, "issues/show.html", { "issue": issue })
 
 
 # # # Creating a class that will later serve as the model for entries.
