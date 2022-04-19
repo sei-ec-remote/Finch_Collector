@@ -1,22 +1,13 @@
-{%load static%}
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Pizza Collector</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
-  </head>
-  <body>
-    <h1>the Pizza Collector's Pizzas</h1>
-    <hr />
-    {% for pizza in pizzas %}
-    <a href="/pizza/{{pizza.id}}">
-    <p>Name: {{ pizza.name }}</p>
-    <p>Type: {{ pizza.type }}</p>
-    <p>Toppings: {{pizza.toppings}}</p>
-    <hr />
-    {% endfor %}
-    
-
-    <footer>All Rights Reserved, Pizza Collector 2022</footer>
-  </body>
-</html>
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+  <h4>the Pizza Collector's Pizzas</h4>
+  <hr />
+  {% for pizza in pizzas %}
+  <a href="/pizza/{{pizza.id}}">
+  <p>Name: {{ pizza.name }}</p>
+  <p>Type: {{ pizza.type }}</p>
+  <p>Toppings: {{pizza.toppings}}</p>
+  <hr />
+  {% endfor %}
+{% endblock %}

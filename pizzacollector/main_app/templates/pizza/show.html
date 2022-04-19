@@ -1,17 +1,9 @@
-<!-- main_app/templates/cats/show.html -->
+{% extends 'base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>pizza collector</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.css">
-    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
-  </head>
-  <body>
-    <h1>Pizza Collector</h1>
 
-    <h2> Name: {{ pizza.name }}</h1>
-    <p> Type: {{ pizza.type }}</p>
-    <p> Toppings: {{ pizza.toppings }}</p>
-  </body>
-</html>
+{% block content %}
+<h2> Name: {{ pizza.name }}</h1>
+<p> Type: {{ pizza.type }}</p>
+<p> Toppings: {{ pizza.toppings }}</p>
+<a href="/pizza">Back to Index Page</a>
+{% endblock %}
