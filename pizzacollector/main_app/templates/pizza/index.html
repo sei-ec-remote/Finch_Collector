@@ -11,12 +11,7 @@
     {% for pizza in pizzas %}
     <p>Name: {{ pizza.name }}</p>
     <p>Type: {{ pizza.type }}</p>
-    <p>Toppings</p>
-    <ul>
-    {%for topping in pizza.toppings%}
-    <li>{{topping}}</li>
-    {%endfor%}
-    </ul>
+    <p>Toppings: {{pizza.toppings}}</p>
     <hr />
     {% endfor %}
     
