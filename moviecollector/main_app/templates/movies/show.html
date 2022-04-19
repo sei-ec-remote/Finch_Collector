@@ -8,5 +8,8 @@
     <p>Release year: {{ movie.year }}</p>
     <p>Description: {{ movie.description }}</p>
     <hr />
+    <a href="{% url 'movies_update' movie.id %}">Update {{ movie }}</a>
+    <a href="{% url 'movies_delete' movie.id %}">Delete {{ movie }}</a>
+    <hr />
     <a href="/movies">Back to Movie List</a>
 {% endblock %}
