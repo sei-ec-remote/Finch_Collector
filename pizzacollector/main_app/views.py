@@ -1,6 +1,8 @@
 # main_app/views.py
 from django.shortcuts import render
 
+from main_app.models import Pizza
+
 
 
 def index(request):
@@ -13,17 +15,18 @@ def about(request):
     return render(request, 'about.html')
 
 
-class Pizza:
-    def __init__(self, name, type, toppings):
-        self.name = name
-        self.type = type
-        self.toppings = toppings
+# class Pizza:
+#     def __init__(self, name, type, toppings):
+#         self.name = name
+#         self.type = type
+#         self.toppings = toppings
 
-pizzas = [
-    Pizza('Chicago', 'deep-dish', ['cheese','tomato sauce','extra tomato sauce']),
-    Pizza('Neapolitan', 'hand toss', ['tomato sauce','mozzarella','fresh basil','olive oil']),
-    Pizza('Meatza', 'hand toss', ['pepperoni','sausage','meatball','bacon','ham','tomato sauce','cheese'])
-]
+# pizzas = [
+#     Pizza('Chicago', 'deep-dish', ['cheese','tomato sauce','extra tomato sauce']),
+#     Pizza('Neapolitan', 'hand toss', ['tomato sauce','mozzarella','fresh basil','olive oil']),
+#     Pizza('Meatza', 'hand toss', ['pepperoni','sausage','meatball','bacon','ham','tomato sauce','cheese'])
+# ]
 
 def pizza_index(request):
+    pizzas = Pizza.objects.all()
     return render(request, 'pizza/index.html',{'pizzas':pizzas})
