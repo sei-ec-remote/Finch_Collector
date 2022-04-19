@@ -5,14 +5,15 @@
     <head>
         <title>All Mutants All The Time</title>
         <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.css">
     </head>
     <body>
-        <h1>The All-New, All-Different, Here We Go Again</h1>
+        <h2>The All-New, All-Different, Here We Go Again</h2>
         <hr />
 
         {% for issue in issues %}
             <img src="{% get_static_prefix %}{{ issue.cover }}" width="150px" />
-            <p>Issue #{{ issue.number }}</p>
+            <p><strong>Issue #{{ issue.number }}</strong></p>
             <p>Year: {{ issue.year }}</p>
             <p>Writer: {{ issue.writer }}</p>
             <p>Artist: {{ issue.artist }}</p>
