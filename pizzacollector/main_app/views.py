@@ -30,3 +30,7 @@ def about(request):
 def pizza_index(request):
     pizzas = Pizza.objects.all()
     return render(request, 'pizza/index.html',{'pizzas':pizzas})
+
+def pizza_show(request, pizza_id):
+    pizza = Pizza.objects.get(id=pizza_id)
+    return render(request, 'pizza/show.html', {'pizza':pizza})
