@@ -1,17 +1,15 @@
 <!-- templates/jewels/index.html -->
+{% extends 'base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Jewelry Collector</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.css">
-  </head>
-  <body>
-    <h1>The Jewelry Collector's jewels</h1>
+
+{% block content %}
+
+    <h3>The Jewelry Collector's jewels</h3>
     <hr />
     {% for jewel in jewels %}
-    <p>Type: {{ jewel.type }}</p>
+    <a href="/jewels/{{jewel.id}}">
+         <p>Type: {{ jewel.type }}</p>
+    </a>
     <p>Year: {{ jewel.year }}</p>
     <p>Description: {{ jewel.description }}</p>
     <p>Metal: {{ jewel.metal }}</p>
@@ -19,6 +17,4 @@
     <hr />
   {% endfor %}
 
-    <footer>All Rights Reserved, Jewelry Collector 2022</footer>
-  </body>
-</html>
+{% endblock %}
