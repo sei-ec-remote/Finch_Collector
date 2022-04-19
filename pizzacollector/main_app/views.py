@@ -1,7 +1,8 @@
 # main_app/views.py
 from django.shortcuts import render
-
 from main_app.models import Pizza
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.http import HttpResponseRedirect
 
 
 
@@ -34,3 +35,22 @@ def pizza_index(request):
 def pizza_show(request, pizza_id):
     pizza = Pizza.objects.get(id=pizza_id)
     return render(request, 'pizza/show.html', {'pizza':pizza})
+
+
+class PizzaCreate(CreateView):
+  model = Pizza
+  fields = '__all__'
+  success_url = '/pizza'
+
+class PizzaUpdate(UpdateView):
+  model = Pizza
+  fields = ['name', 'type', 'toppings']
+
+  def form_valid(self, form):
+    self.object = form.save(commit=False)
+    self.object.save()
+    return HttpResponseRedirect('/pizza/' + str(self.object.pk))
+
+class PizzaDelete(DeleteView):
+  model = Pizza
+  success_url = '/pizza'
