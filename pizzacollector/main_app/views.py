@@ -7,7 +7,23 @@ def index(request):
     # render index.html
     return render(request, 'index.html')
 
-# here is our about view
+
 def about(request):
     # render about page
     return render(request, 'about.html')
+
+
+class Pizza:
+    def __init__(self, name, type, toppings):
+        self.name = name
+        self.type = type
+        self.toppings = toppings
+
+pizzas = [
+    Pizza('Chicago', 'deep-dish', ['cheese','tomato sauce','extra tomato sauce']),
+    Pizza('Neapolitan', 'hand toss', ['tomato sauce','mozzarella','fresh basil','olive oil']),
+    Pizza('Meatza', 'hand toss', ['pepperoni','sausage','meatball','bacon','ham','tomato sauce','cheese'])
+]
+
+def pizza_index(request):
+    return render(request, 'pizza/index.html',{'pizzas':pizzas})
