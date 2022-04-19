@@ -1,5 +1,6 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponseRedirect
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import Dog
 
 # Create your views here.
@@ -21,3 +22,36 @@ def dogs_index(request):
 def dogs_show(request, dog_id):
     dog = Dog.objects.get(id=dog_id)
     return render(request, 'dogs/show.html', {'dog': dog})
+
+
+class DogCreate(CreateView):
+    model = Dog
+    # utilize all fields from the model dog
+    fields = '__all__'
+    # redirect upon successful creation
+    success_url = '/dogs'
+
+    def form_valid(self, form):
+        # creating an object from the form
+        self.object = form.save(commit=False)
+    # adding a user to that object
+        self.object.user = self.request.user
+    # saving object in the db
+        self.object.save()
+    # redirecting to the main index page
+        return HttpResponseRedirect('/dogs')
+
+
+class DogUpdate(UpdateView):
+    model = Dog
+    fields = ['name', 'breed', 'description', 'age']
+
+    def form_valid(self, form):
+        self.object = form.save(commit=False)
+        self.object.save()
+        return HttpResponseRedirect('/dogs/' + str(self.object.pk))
+
+
+class DogDelete(DeleteView):
+    model = Dog
+    success_url = '/dogs'
