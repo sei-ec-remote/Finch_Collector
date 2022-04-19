@@ -1,0 +1,25 @@
+<!-- templates/cats/index.html -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Pizza Collector</title>
+  </head>
+  <body>
+    <h1>the Pizza Collector's Pizzas</h1>
+    <hr />
+    {% for pizza in pizzas %}
+    <p>Name: {{ pizza.name }}</p>
+    <p>Type: {{ pizza.type }}</p>
+    <p>Toppings</p>
+    <ul>
+    {%for topping in pizza.toppings%}
+    <li>{{topping}}</li>
+    {%endfor%}
+    </ul>
+    <hr />
+    {% endfor %}
+    
+
+    <footer>All Rights Reserved, Pizza Collector 2022</footer>
+  </body>
+</html>
