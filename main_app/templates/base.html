@@ -1,0 +1,20 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>adoptadog</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.css">
+  </head>
+  <body>
+        <h1>adoptadog</h1>
+    <hr />
+
+        {% block content %}
+        {% endblock %}
+
+      <footer>
+        All Rights Reserved, adoptadog 2022
+      </footer>
+  </body>
+</html>
