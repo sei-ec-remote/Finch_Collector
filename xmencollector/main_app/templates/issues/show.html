@@ -1,21 +1,11 @@
 <!-- main_app/templates/issues/show.html -->
+{% extends "base.html "%}
 {% load static %}
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>All Mutants All The Time</title>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.css">
-        <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
-    </head>
-    <body>
-        <h2>The All-New, All-Different, Here We Go Again</h2>
-        <hr>
-        <h3>Issue #{{ issue.number }}</h3>
-            <img src="{% get_static_prefix %}{{ issue.cover }}" width="300px" />
+
+{% block content%}
+    <h3>Issue #{{ issue.number }}</h3>
+        <img src="{% get_static_prefix %}{{ issue.cover }}" width="300px" />
         <p>Year: {{ issue.year }}</p>
         <p>Writer: {{ issue.writer }}</p>
         <p>Artist: {{ issue.artist }}</p>
-
-        <footer>Footer stuff</footer>
-    </body>
-</html>
+{% endblock %}
