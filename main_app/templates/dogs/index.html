@@ -1,0 +1,13 @@
+<!-- templates/dogs/index.html -->
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    {% for dog in dogs %}
+    <a href="/dogs/{{dog.id}}">
+        <p>Name: {{ dog.name }}</p>
+        </a>
+        <p>Age: {{ dog.age }}</p>
+        <hr />
+    {% endfor %}
+{% endblock %}

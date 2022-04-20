@@ -1,0 +1,15 @@
+<!-- main_app/templates/dogs/show.html -->
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+
+    <h2> Name: {{ dog.name }}
+
+    </h1>
+    <p> Breed: {{ dog.breed }}</p>
+    <p> Description: {{ dog.description }}</p>
+    <p> Age: {{ dog.age }}</p>
+ 
+    {% endblock %}
