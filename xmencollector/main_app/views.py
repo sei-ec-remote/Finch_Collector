@@ -3,9 +3,29 @@
 
 from django.shortcuts import render
 from .models import Issue
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.http import HttpResponsePermanentRedirect, HttpResponseRedirect
 
 # # We're now rendering a template instead of sending an HTTP response, so we no longer need this.
 # from django.http import HttpResponse
+
+class IssueCreate(CreateView):
+    model = Issue
+    fields = "__all__"
+    success_url = "/issues"
+
+class IssueUpdate(UpdateView):
+    model = Issue
+    fields = ["number", "year", "cover", "writer", "artist"]
+    
+    def form_valid(self, form):
+        self.object = form.save(commit=False)
+        self.object.save()
+        return HttpResponseRedirect("/issues/" + str(self.object.pk))
+
+class IssueDelete(DeleteView):
+    model = Issue
+    success_url = "/issues"
 
 
 # # We're now rendering a template instead of sending an HTTP response, so we no longer need these.
