@@ -10,4 +10,4 @@ class Issue(models.Model):
 
 # Defines what will be displayed when the object is passed to a print statement.
 def __str__(self):
-    return self.name
+    return self.number
