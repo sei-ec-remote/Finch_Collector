@@ -1,0 +1,15 @@
+<!-- templates/cats/index.html -->
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <h1>The To Do Lister</h1>
+    <hr />
+    {% for list in lists %}
+        <a href="/lists/{{list.id}}">
+            <p>Title: {{ list.title }}</p>
+        </a>    
+    <p>Description: {{ list.description }}</p>
+    <hr />
+  {% endfor %}
+{% endblock %}
