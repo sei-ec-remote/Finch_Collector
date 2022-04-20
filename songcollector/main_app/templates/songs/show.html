@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Song Collector</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.css">
+  </head>
+  <body>
+    <h4> Song Collector Song</h4>
+        <div class="container">
+            <div class="card-content">
+                <h2> Title: {{ song.title }}</h1>
+                <p> Artist: {{ song.artist }}</p>
+                <p> Genre: {{ song.genre }}</p>
+                <p> Run Time: {{ song.run_time }} mins. </p>
+            </div>
+            <a class="btn" href="{% url 'songs_update' song.id %}">UPDATE SONG</a>
+            <a class="btn" href="{% url 'songs_delete' song.id %}">DELETE THIS SONG</a>
+        </div>
+
+  </body>
+</html>
+{% endblock %}

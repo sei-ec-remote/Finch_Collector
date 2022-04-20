@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Song collector</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.css">
+</head>
+
+<body>
+    <a href="/songs/">
+        <h1>Song Collector</h1>
+    </a>
+    <hr />
+
+    {% block content %}
+    {% endblock %}
+
+    <footer class="page-footer">
+        <div class="container">
+            All Rights Reserved, Song Collector 2022
+        </div>
+    </footer>
+</body>
+
+</html>
