@@ -1,16 +1,11 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>moviecollector</title>
-  </head>
-  <body>
-    <h1>the moviecollector's movies</h1>
-    <hr />
-    {% for movie in movies %}
-    <p>Name: {{ movie.name }}</p>
-    <p>Genre: {{ movie.genre }}</p>
-    <hr />
-    {% endfor %}
-    <footer>All Rights Reserved, moviecollector 2018</footer>
-  </body>
-</html>
+{% extends 'base.html' %} {% load static %} {% block content %}
+<h1>the moviecollector's movies</h1>
+<a href="/movies/create">Add a New Movie!</a>
+<hr />
+{% for movie in movies %}
+<a href="{{movie.id}}">
+  <p>Name: {{ movie.name }}</p>
+  <p>Genre: {{ movie.genre }}</p>
+</a>
+<hr />
+{% endfor %} {% endblock %}

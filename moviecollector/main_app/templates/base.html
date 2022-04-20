@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>moviecollector</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.css"
+    />
+  </head>
+  <body>
+    <a href="/">
+      <h1>moviecollector</h1>
+    </a>
+    <hr />
+
+    {% block content %} {% endblock %}
+
+    <footer>All Rights Reserved, moviecollector 2018</footer>
+  </body>
+</html>

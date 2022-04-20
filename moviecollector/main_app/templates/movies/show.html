@@ -1,0 +1,7 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+    <h2> Name: {{ movie.name }}</h1>
+    <p> Genre: {{ movie.genre }}</p>
+    <p> Description: {{ movie.description }}</p>
+        <a href="{% url 'movies_update' movie.id %}">Update Details</a> | 
+    <a href="{% url 'movies_delete' movie.id %}">DELETE This Movie</a>
+{% endblock %}
