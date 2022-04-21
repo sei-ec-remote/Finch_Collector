@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>recipecollector</title>
+  </head>
+  <body>
+    <h1>the recipecollector's recipes</h1>
+    <hr />
+        {% for recipe in recipes %}
+            <p>Title: {{ recipe.title }}</p>
+            <p>Category: {{ recipe.category }}</p>
+            <a href="{{ recipe.source}}">Recipe</a>
+            <hr />
+        {% endfor %}
+    <footer>All Rights Reserved, recipecollector 2018</footer>
+  </body>
+</html>
