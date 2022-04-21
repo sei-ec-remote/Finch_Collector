@@ -6,9 +6,10 @@
     <h1>All the Yummy Recipes</h1>
     <hr />
     {% for recipe in recipes %}
-        <p>Title: {{ recipe.title }}</p>
+        <a href="/recipes/{{ recipe_id }}">
+            <h3>{{ recipe.title }}</h3>
+        </a>
         <p>Category: {{ recipe.category }}</p>
-        <a href="{{ recipe.source}}">Recipe</a>
         <hr />
     {% endfor %}
 
