@@ -1,17 +1,15 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>recipecollector</title>
-  </head>
-  <body>
-    <h1>the recipecollector's recipes</h1>
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+    <h1>All the Yummy Recipes</h1>
     <hr />
-        {% for recipe in recipes %}
-            <p>Title: {{ recipe.title }}</p>
-            <p>Category: {{ recipe.category }}</p>
-            <a href="{{ recipe.source}}">Recipe</a>
-            <hr />
-        {% endfor %}
-    <footer>All Rights Reserved, recipecollector 2018</footer>
-  </body>
-</html>
+    {% for recipe in recipes %}
+        <p>Title: {{ recipe.title }}</p>
+        <p>Category: {{ recipe.category }}</p>
+        <a href="{{ recipe.source}}">Recipe</a>
+        <hr />
+    {% endfor %}
+
+{% endblock %}
