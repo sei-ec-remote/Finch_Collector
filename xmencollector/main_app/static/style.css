@@ -1,3 +1,18 @@
 body {
     background-color: peachpuff;
 }
+
+.card img {
+    max-height: 200px;
+    object-fit: cover;
+}
+.card img.materialized.active {
+    max-height: none;
+    object-fit: none;
+}
+
+.card span {
+    border: 2px solid black;
+    font-weight: bold !important;
+    height: 50px;
+}
