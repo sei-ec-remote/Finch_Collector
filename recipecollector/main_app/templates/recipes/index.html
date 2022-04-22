@@ -6,7 +6,7 @@
     <h1>All the Yummy Recipes</h1>
     <hr />
     {% for recipe in recipes %}
-        <a href="/recipes/{{ recipe_id }}">
+        <a href="/recipes/{{recipe.id}}">
             <h3>{{ recipe.title }}</h3>
         </a>
         <p>Category: {{ recipe.category }}</p>
