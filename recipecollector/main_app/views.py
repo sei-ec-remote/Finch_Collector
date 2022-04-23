@@ -50,3 +50,21 @@ class RecipeCreate(CreateView):
         self.object.save()
         # redirecting to the main index page
         return HttpResponseRedirect('/recipes')
+
+class RecipeUpdate(UpdateView):
+    # use the model Recipe
+    model = Recipe
+    fields = ['title', 'source', 'category']
+    # now we use a function to determine if our form data is valid
+    def form_valid(self, form):
+        # commit=False is useful when we're getting data from a form
+        # but we need to populate with some non-null data
+        # saving with commit=False gets us a model object, then we can add our extra data and save
+        self.object = form.save(commit=False)
+        self.object.save()
+        # pk is the primary key, aka the id of the object
+        return HttpResponseRedirect('/recipes/' + str(self.object.pk))
+
+class RecipeDelete(DeleteView):
+    model = Recipe
+    success_url = '/recipes'
