@@ -1,0 +1,11 @@
+<!-- main_app/templates/issues/show.html -->
+{% extends "base.html "%}
+{% load static %}
+
+{% block content%}
+    <h3>Issue #{{ issue.number }}</h3>
+        <img src="{% get_static_prefix %}{{ issue.cover }}" width="300px" />
+        <p>Year: {{ issue.year }}</p>
+        <p>Writer: {{ issue.writer }}</p>
+        <p>Artist: {{ issue.artist }}</p>
+{% endblock %}
